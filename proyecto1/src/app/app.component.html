@@ -6,3 +6,23 @@
 <h3>Mi nombre: {{ nombre }}</h3>
 
 <p>{{ edad > 17 ? "mayor de edad" : "menor de edad" }}</p>
+<app-user-profile></app-user-profile>
+
+<p>Hola, mi nombre es: {{ name }}</p>
+<p [class]="naranja">Hola, mi nombre es: {{ name }}</p>
+
+<img [src]="imgUrl" />
+<img src="{{ imgUrl }}" />
+
+<input type="checkbox" name="" id="" [checked]="seleccionado" />
+<input [value]="name" type="text" [disabled]="deshabilitado" />
+
+<div>
+  Asignatura: {{ asignatura.nombre }}
+</div>
+
+<div>
+  Código: {{ asignatura.codigo }}
+</div>
+
+<app-alumno></app-alumno>
