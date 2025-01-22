@@ -2,11 +2,19 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AlumnoComponent } from './alumno/alumno.component';
+import { FormsModule } from '@angular/forms';
+import { DatosLibroComponent } from './datos-libro/datos-libro.component';
 
 @Component({
   selector: 'app-hola',
   standalone: true, //no hay modulos, coge uno por dfto
-  imports: [RouterOutlet, UserProfileComponent, AlumnoComponent], //clases que necesitamos
+  imports: [
+    RouterOutlet,
+    UserProfileComponent,
+    AlumnoComponent,
+    FormsModule,
+    DatosLibroComponent,
+  ], //clases que necesitamos
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -52,5 +60,40 @@ export class AppComponent {
     } else {
       this.texto = 'Mujer';
     }
+  }
+
+  nombreCompy: string = '';
+  //DAR VALOR A NOMBRE DENTRO DE FUNCION
+  mostrarNombre() {
+    this.nombreCompy = 'Inma';
+  }
+
+  key: string = '';
+  mostrarEtiqueta(event: any) {
+    //coge el valor del input y concatena
+    this.key += event.target.value + ','; //  .join(',');
+  }
+
+  //ejercicios ngmodel--no es necesario event
+  contenido: string = '';
+
+  //2
+  texto1: string = '';
+  texto2: string = '';
+
+  cambiarM(event: any) {
+    //cogemos el valor del que ha saltado el evento--txt1
+    this.texto2 = event.target.value.toUpperCase();
+  }
+
+  cambiarm(event: any) {
+    //cogemos el valor del que ha saltado el evento--txt2
+    this.texto1 = event.target.value.toUpperCase();
+  }
+
+  //recibir datos del padre
+  valorHijo: string = '';
+  recuperarNombre(palabra: string) {
+    this.valorHijo = palabra;
   }
 }

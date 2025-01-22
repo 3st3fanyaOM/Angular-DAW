@@ -6,7 +6,13 @@
 <h3>Mi nombre: {{ nombre }}</h3>
 
 <p>{{ edad > 17 ? "mayor de edad" : "menor de edad" }}</p>
-<app-user-profile></app-user-profile>
+
+<!--pasar atributos al componente hijo : user-profile -->
+<app-user-profile
+  nombre="Fernando"
+  role="Administrador"
+  (selected)="recuperarNombre($event)"
+></app-user-profile>
 
 <p>Hola, mi nombre es: {{ name }}</p>
 <p [class]="naranja">Hola, mi nombre es: {{ name }}</p>
@@ -23,7 +29,7 @@
 
 <app-alumno></app-alumno>
 
-<!--ejercicios de casa-->
+<!--ejercicios de casa 21-01-->
 <br />
 <p>Ejercicios de casa</p>
 
@@ -36,7 +42,34 @@
   [checked]="desseleccionado"
   (click)="mostrarMensaje(); cambiarTexto(texto)"
 />
-<br>
+<br />
 <!--comilla simple dentro de comilla doble-->
-<input type="radio" name="sexo" id="" value="H" (change)="cambiarSexo('H')"/>
-<input type="radio" name="sexo" id="" value="M" (change)="cambiarSexo('M')">
+<input type="radio" name="sexo" id="" value="H" (change)="cambiarSexo('H')" />
+<input type="radio" name="sexo" id="" value="M" (change)="cambiarSexo('M')" />
+
+<!--ejercicios 22/01 pag 7 apuntes-->
+<button (click)="mostrarNombre()">Compy</button>
+<!--atributo value sin [], interpolar variable-->
+<input type="text" value="{{ nombreCompy }}" />
+<br />
+
+<input type="text" (keyup)="mostrarEtiqueta($event)" />
+
+<p>{{ key }}</p>
+
+<!--ejercicios NGMODEL-->
+<p>ng model</p>
+<input type="text" [(ngModel)]="contenido" />
+<!--pasa el contenido solo declarando la var en ts-->
+<div>
+  {{ contenido }}
+</div>
+
+<!--2-->
+<input type="text" [(ngModel)]="texto1" (keyup)="cambiarM($event)" />
+<input type="text" [(ngModel)]="texto2" (keyup)="cambiarM($event)" />
+
+<input type="text" [(ngModel)]="texto1" value="{{ texto2.toLowerCase() }}" />
+<input type="text" [(ngModel)]="texto2" value="{{ texto1.toUpperCase() }}" />
+
+<app-datos-libro></app-datos-libro>

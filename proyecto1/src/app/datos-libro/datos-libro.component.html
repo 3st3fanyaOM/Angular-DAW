@@ -1,0 +1,18 @@
+<h2>{{ titulo }}</h2>
+
+<li>Titulo: {{ libro.titulo }}</li>
+<li>Autor: {{ libro.autor }}</li>
+<li>Precio: {{ libro.precio }}</li>
+<li [class.aviso]="libro.stock == 0">Stock: {{ libro.stock }}</li>
+<li>Cantidad: {{ libro.cantidad }}</li>
+<li>Imagen: <img src="{{ libro.imagen }}" /></li>
+
+<button (click)="add()">Añadir</button>
+<p>{{ libro.cantidad }}</p>
+<!--si no hay stock deshabilita el boton restar unidades-->
+<button (click)="borrar()" [disabled]="libro.cantidad == 0">Quitar</button>
+
+<!--coger cantidad por input y actualizar datos-->
+<br>
+<label for="">Unidades</label>
+<input type="text" [(ngModel)]="libro.cantidad" />
