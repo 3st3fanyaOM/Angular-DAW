@@ -24,10 +24,19 @@
 <app-alumno></app-alumno>
 
 <!--ejercicios de casa-->
-<br>
+<br />
 <p>Ejercicios de casa</p>
 
-<p>{{texto}}</p>
-<input type="checkbox" name="" id="" [checked]="desseleccionado" (click)=mostrarMensaje() ; cambiarTexto(texto)>
-
-
+<p>{{ texto }}</p>
+<!--funciones de enevto separadas por ; y entrecomilladas las 2-->
+<input
+  type="checkbox"
+  name=""
+  id=""
+  [checked]="desseleccionado"
+  (click)="mostrarMensaje(); cambiarTexto(texto)"
+/>
+<br>
+<!--comilla simple dentro de comilla doble-->
+<input type="radio" name="sexo" id="" value="H" (change)="cambiarSexo('H')"/>
+<input type="radio" name="sexo" id="" value="M" (change)="cambiarSexo('M')">
