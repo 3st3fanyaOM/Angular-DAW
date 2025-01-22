@@ -1,0 +1,15 @@
+<h1>{{ titulo }}</h1>
+<h1 [innerHTML]="titulo"></h1>
+<!--escribir denhtro del tag-->
+<div class="comp-user">
+  <p class="name">Nombre: Pepe</p>
+  <p class="role">Roles: Administrador</p>
+</div>
+
+<div class="comp-user">
+  <p class="name">Nombre: {{ nombre }}</p>
+  <p class="role">Role: {{ role }}</p>
+</div>
+
+<input type="text" [value]="nombre" /><!--property binding-->
+
