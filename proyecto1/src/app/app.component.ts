@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AlumnoComponent } from './alumno/alumno.component';
 import { FormsModule } from '@angular/forms';
@@ -9,7 +8,6 @@ import { DatosLibroComponent } from './datos-libro/datos-libro.component';
   selector: 'app-hola',
   standalone: true, //no hay modulos, coge uno por dfto
   imports: [
-    RouterOutlet,
     UserProfileComponent,
     AlumnoComponent,
     FormsModule,

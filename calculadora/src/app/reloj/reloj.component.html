@@ -1,1 +1,25 @@
-<p>reloj works!</p>
+<div class="container">
+  <h1>Calculadora</h1>
+  <input
+    type="number"
+    name=""
+    id=""
+    [placeholder]="valorPorDefecto"
+    [(ngModel)]="valor1"
+  />
+  <input
+    type="number"
+    name=""
+    id=""
+    [placeholder]="valorPorDefecto"
+    [(ngModel)]="valor2"
+  />
+
+  <button (click)="sumar(valor1, valor2)">Sumar</button>
+  <button (click)="restar(valor1, valor2)">Restar</button>
+  <button (click)="multiplicar(valor1, valor2)">Multiplicar</button>
+  <button (click)="dividir(valor1, valor2)">Dividir</button>
+
+  <h3>Resultado</h3>
+  <p>{{ resultado }}</p>
+</div>
