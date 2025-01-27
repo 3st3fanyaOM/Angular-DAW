@@ -1,0 +1,22 @@
+<p>Perfil usuario</p>
+
+<!--interpolación {{variable}}-->
+<div class="comp-user">
+  <p class="name">Nombre:{{ name }}</p>
+  <p class="role">Rol:{{ role }}</p>
+</div>
+
+<!--property binding-->
+<img [src]="urlImg" alt="" [style.width]="'200px'" />comilla simple por que
+espera una cadena
+<h1 [innerHTML]="title"></h1>
+<input type="text" [disabled]="isDisabled" />
+
+<!--ternario-->
+<p>Mayoría de edad: {{ edad >= 17 ? "Mayor de edad" : "Menor de edad" }}</p>
+
+<!--almacenar contenido input y mostrar-->
+<input type="text" #nuevoDni (keyup)="(0)">
+<div>{{nuevoDni.value}}</div>
+
+<!--event binding ----vista a componente--> pagina 7 apuntes
