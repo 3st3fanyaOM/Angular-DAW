@@ -94,4 +94,11 @@ export class AppComponent {
   recuperarNombre(palabra: string) {
     this.valorHijo = palabra;
   }
+
+  idLibro: string = '';
+  titulo: string = '';
+
+  devolverTitulo(titulo: string) {
+    this.titulo = titulo;
+  }
 }

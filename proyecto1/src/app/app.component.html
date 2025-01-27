@@ -73,3 +73,8 @@
 <input type="text" [(ngModel)]="texto2" value="{{ texto1.toUpperCase() }}" />
 
 <app-datos-libro></app-datos-libro>
+<p>Introduce el numero de libro</p>
+<input type="text" [(ngModel)]="idLibro">
+<app-datos-libro [numeroLibro]="idLibro" (selected)="devolverTitulo($event)"></app-datos-libro>
+<p>{{titulo}}</p>
+

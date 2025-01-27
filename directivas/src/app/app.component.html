@@ -1,0 +1,19 @@
+<h1 [innerHTML]="titulo"></h1>
+<label for="nombre">Nombre</label>
+<input type="text" [(ngModel)]="nombre" />
+<label for="apellidos">Apellidos</label>
+<input type="text" [(ngModel)]="apellidos" />
+<button (click)="mostrarNombre()">Añadir</button>
+<div *ngIf="alta; else sinAlta">
+  <p>Alta correcta de usuario {{ nombre }} {{ apellidos }}</p>
+</div>
+<ng-template #sinAlta>
+  <p>Ninguna alta</p>
+</ng-template>
+<br>
+<div *ngFor="let persona of personas">
+  <p>Nombre:{{ persona.nombre }}</p>
+  <p>Apellidos:{{ persona.apellidos }}</p>
+  <p>Edad:{{persona.edad}}</p>
+    <br>
+</div>
