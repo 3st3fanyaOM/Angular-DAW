@@ -9,14 +9,15 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './counter.component.css',
 })
 export class CounterComponent {
-  restarUno(valorContador: number) {
-    this.valorContador = valorContador--;
+  //si tengo la variable en la clase, no hay que pasarla por parámetro
+  restarUno() {
+    this.valorContador -= 1;
   }
-  resetear(valorContador: number) {
+  resetear() {
     this.valorContador = 10;
   }
-  sumarUno(valorContador: number) {
-    this.valorContador = valorContador++;
+  sumarUno() {
+    this.valorContador += 1;
   }
   valorContador: number = 10;
 }
