@@ -10,10 +10,34 @@
 <ng-template #sinAlta>
   <p>Ninguna alta</p>
 </ng-template>
-<br>
-<div *ngFor="let persona of personas">
-  <p>Nombre:{{ persona.nombre }}</p>
-  <p>Apellidos:{{ persona.apellidos }}</p>
-  <p>Edad:{{persona.edad}}</p>
-    <br>
+<br />
+
+<div *ngFor="let persona of personas; let i = index">
+  <h1>{{ i }}</h1>
+  <li>Nombre:{{ persona.nombre }}</li>
+  <li>Apellidos:{{ persona.apellidos }}</li>
+  <li>Edad:{{ persona.edad }}</li>
+  <br />
 </div>
+
+<p>Personas mayores de 30</p>
+<ng-container *ngFor="let persona of personas">
+  <ng-container *ngIf="persona.edad >= 30">
+    <li>{{ persona.nombre }}</li>
+  </ng-container>
+</ng-container>
+
+<button (click)="mostrarOpc($event)" value="A">A</button>
+<div>{{ key }}</div>
+<button (click)="mostrarOpc($event)" value="B">B</button>
+<div>{{ key }}</div>
+<button (click)="mostrarOpc($event)" value="C">C</button>
+<div>{{ key }}</div>
+<div *ngIf="pulsado; else noPulsado">
+  <p>Has pulsado {{ key }}</p>
+</div>
+<ng-template #noPulsado>
+  <p>No has seleccionado ningún botón</p>
+</ng-template>
+
+<app-articulo></app-articulo>
