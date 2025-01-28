@@ -20,3 +20,11 @@ espera una cadena
 <div>{{nuevoDni.value}}</div>
 
 <!--event binding ----vista a componente--> pagina 7 apuntes
+<input type="text" value="{{compy}}"><!--cojo el valor con interpolacion-->
+<button (click)="mostrarCompy()">Compy</button>
+<br>
+
+<!--Cuando termine de escribir en él, con el evento keyup, mostrará una
+etiqueta con lo que haya escrito.-->
+<input type="text" (keyup)="mostrarEtiqueta($event)">
+<p>{{key}}</p>

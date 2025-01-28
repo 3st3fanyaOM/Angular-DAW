@@ -16,4 +16,19 @@ export class PerfilUsuarioComponent {
   title: string = 'Titulo';
   isDisabled: boolean = true; //deshabilita el input
   edad: number = 17;//ternario mayor de edad
+
+  //event binding
+  //declaro var vacia
+  compy: string="";
+  //doy valor en funcion
+  mostrarCompy(){
+    this.compy="Inma";
+  }
+
+  //mostrar en etiqueta lo que tecleamos en input
+  key: string = '';
+  mostrarEtiqueta(event: any) {
+    //coge el valor del input y concatena
+    this.key += event.target.value + ','; //  .join(',');
+  }
 }
