@@ -1,0 +1,7 @@
+<h2>Lista pokemon</h2>
+<ul>
+  <li *ngFor="let pokemon of (pokemonList$ | async)?.results">
+    <!--?.results se trae el array results de la api-->
+    {{ pokemon.name }}
+  </li>
+</ul>
