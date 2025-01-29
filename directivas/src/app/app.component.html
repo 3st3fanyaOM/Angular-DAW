@@ -5,6 +5,7 @@
 <input type="text" [(ngModel)]="apellidos" />
 <button (click)="mostrarNombre()">Añadir</button>
 <div *ngIf="alta; else sinAlta">
+  <!--alta es un booleano definido en ts-->
   <p>Alta correcta de usuario {{ nombre }} {{ apellidos }}</p>
 </div>
 <ng-template #sinAlta>
@@ -21,11 +22,11 @@
 </div>
 
 <p>Personas mayores de 30</p>
-<ng-container *ngFor="let persona of personas">
-  <ng-container *ngIf="persona.edad >= 30">
+<div *ngFor="let persona of personas">
+  <div *ngIf="persona.edad >= 30">
     <li>{{ persona.nombre }}</li>
-  </ng-container>
-</ng-container>
+  </div>
+</div>
 
 <button (click)="mostrarOpc($event)" value="A">A</button>
 <div>{{ key }}</div>
@@ -41,3 +42,4 @@
 </ng-template>
 
 <app-articulo></app-articulo>
+

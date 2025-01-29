@@ -1,0 +1,15 @@
+<p>listado-articulos</p>
+
+<!--pintar lista recorriendo array con ngfor-->
+
+  <h2>{{ indice }}</h2>
+  <p>Nombre: {{ producto.nombre }}</p>
+  <p>Precio: {{ producto.precio }}</p>
+  <p>Cantidad: {{ producto.unidades }}</p>
+
+  <app-caracteristicas-articulo (selected)="agregarCaracteristica($event)"></app-caracteristicas-articulo>
+  <ul>
+    <li *ngFor="let caracteristica of arrayCaracteristicas">
+        {{caracteristica}}
+    </li>
+  </ul>

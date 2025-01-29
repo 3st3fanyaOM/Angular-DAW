@@ -7,17 +7,13 @@
 </head>
 <body>
 <h1>Componente productos</h1>
+<!--en formularios siempre ngmodel-->
 <form action="#">
   <input type="text" name="nombre" [(ngModel)]="nombreProducto">
   <input type="text" name="precio" [(ngModel)]="precioProducto">
   <input type="text" name="unidades" [(ngModel)]="unidadesProducto">
   <button (click)="guardarProducto()">Comprar</button>
 </form>
-<div *ngFor="let producto of productos; let i = index">
-  <h2>{{i}}</h2>
-<p>Nombre: {{producto.nombre}}</p>
-<p>Precio: {{producto.precio}}</p>
-<p>Cantidad: {{producto.unidades}}</p>
-</div>
+<app-listado-articulos *ngFor="let producto of productos; let i = index" [producto]="producto" [indice]="i"></app-listado-articulos>
 </body>
 </html>
