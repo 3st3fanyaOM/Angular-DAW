@@ -1,0 +1,7 @@
+<h1>Hero</h1>
+<p>{{ nombre.toUpperCase() }}, {{ edad }} años</p>
+
+<button (click)="cambiarEdad()">Cambiar edad</button>
+<div *ngIf="nombre === 'ironman'">
+  <button (click)="cambiarASpiderman()">Cambiar a Spiderman</button>
+</div>
