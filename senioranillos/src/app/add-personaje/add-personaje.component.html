@@ -1,0 +1,18 @@
+<h3>Agregar Personaje</h3>
+<div class="mb-3">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Nombre"
+    [(ngModel)]="nombre"
+  />
+</div>
+<div class="mb-3">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Raza"
+    [(ngModel)]="raza"
+  />
+</div>
+<button class="btn btn-success" (click)="agregarPersonaje()">Agregar</button>
