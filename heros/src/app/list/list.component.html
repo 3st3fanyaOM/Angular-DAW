@@ -4,7 +4,7 @@
 </div>
 <button (click)="borrarUltimo()">Delete last hero</button>
 <div *ngIf="deleted; else noHay">
-  <p [(ngModel)]="lastHero">Hero deleted: {{ lastHero }}</p>
+  <p>Hero deleted: {{ lastHero }}</p>
 </div>
 <ng-template #noHay>
   <p>No se ha borrado nada</p>

@@ -12,11 +12,11 @@ import { FormsModule } from '@angular/forms';
 export class ListComponent {
   heros = ['Wonder Woman', 'Batman', 'Superman'];
   deleted: boolean = false;
+  lastHero: any = '';
 
   borrarUltimo() {
+    this.lastHero = this.heros.at(-1);
     this.heros.pop();
     this.deleted = true;
   }
-
-  lastHero = this.heros.at(-1);
 }
