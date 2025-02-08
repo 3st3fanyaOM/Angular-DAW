@@ -9,6 +9,6 @@ export const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'contacto', component: ContactoComponent },
   { path: 'libros', component: LibrosComponent },
-  { path: 'libro-detalle', component: LibroDetalleComponent },
-  { path: '**', component: HomeComponent },
+  { path: 'libro-detalle/:id', component: LibroDetalleComponent }, // No olvides agregar el parámetro ":id" aquí
+  { path: '**', redirectTo: 'home' }, // Redirigir a home si la ruta no es válida
 ];
