@@ -1,1 +1,5 @@
-<p>libros works!</p>
+<h1>Libros de la biblioteca</h1>
+<div *ngFor="let libro of libros"> <!--no necesitamos index, si id-->
+  <a [routerLink]="['/libro-detalle', libro.id]">{{ libro.id }} - {{ libro.titulo }}</a>
+  <!--con routerlink mandamos el id por URL-->
+</div>
