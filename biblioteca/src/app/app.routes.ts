@@ -3,12 +3,14 @@ import { HomeComponent } from './home/home.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { LibrosComponent } from './libros/libros.component';
 import { LibroDetalleComponent } from './libro-detalle/libro-detalle.component';
+import { LibroNuevoComponent } from './libro-nuevo/libro-nuevo.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'contacto', component: ContactoComponent },
   { path: 'libros', component: LibrosComponent },
-  { path: 'libro-detalle/:id', component: LibroDetalleComponent }, // No olvides agregar el parámetro ":id" aquí
+  { path: 'libro-detalle/:id', component: LibroDetalleComponent },
+  { path: 'libro-nuevo', component: LibroNuevoComponent }, // No olvides agregar el parámetro ":id" aquí
   { path: '**', redirectTo: 'home' }, // Redirigir a home si la ruta no es válida
 ];

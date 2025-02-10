@@ -11,18 +11,23 @@ import { LibrosService } from '../services/libros.service';
   styleUrl: './libro-detalle.component.css',
 })
 export class LibroDetalleComponent implements OnInit {
-  libro: Libro | undefined;
-  id: number = 0;
+  libro?: Libro = {
+    id: 0,
+    titulo: '',
+    autor: '',
+  };
 
   constructor(
-    private act: ActivatedRoute,
+    private router: Router, //para navigate
     private libroService: LibrosService,
-    private router: Router
+    private route: ActivatedRoute //para obtener id
   ) {}
 
   ngOnInit(): void {
-    const id = Number(this.act.snapshot.paramMap.get('id'));
+    const id = this.route.snapshot.params['id'];
+    console.log(id);
     this.libro = this.libroService.obtenerLibroPorId(id);
+    console.log(this.libro);
   }
 
   volver() {
