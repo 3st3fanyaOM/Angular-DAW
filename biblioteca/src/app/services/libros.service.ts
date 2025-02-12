@@ -37,4 +37,14 @@ export class LibrosService {
   obtenerLibroPorId(id: number): Libro | undefined {
     return this.libros.find((libro) => libro.id == id);
   }
+
+  actualizarLibro(idLibro: number, libroEditado: Libro): Boolean {
+    const libro = this.libros.find((libro) => libro.id == idLibro);
+    if (libro) {
+      libro.titulo = libroEditado.titulo;
+      libro.autor = libroEditado.autor;
+      return true;
+    }
+    return false;
+  }
 }

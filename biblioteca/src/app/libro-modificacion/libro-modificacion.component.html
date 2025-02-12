@@ -1,9 +1,9 @@
-<h2>Añadir un nuevo libro</h2>
+<h2>Modificar libro</h2>
 <form action="#">
   <label for="titulo">Titulo</label>
   <input type="text" name="titulo" [(ngModel)]="titulo" />
   <label for="titulo">Autor</label>
   <input type="text" name="autor" [(ngModel)]="autor" />
-  <button (click)="guardarLibro()">Alta de libro</button>
+  <button (click)="modificarLibro()">Guardar cambios</button>
 </form>
 <button (click)="volver()">Atrás</button>
