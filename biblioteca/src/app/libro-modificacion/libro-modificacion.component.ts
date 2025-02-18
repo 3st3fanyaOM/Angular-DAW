@@ -19,10 +19,10 @@ export class LibroModificacionComponent implements OnInit {
   constructor(
     private router: Router,
     private librosService: LibrosService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute//para coger el id que pasa por parametro
   ) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {//rellenar los inputs con el libro recibido cx id
     const id = this.route.snapshot.params['id'];
     const libroEditar = this.librosService.obtenerLibroPorId(id);
     if (libroEditar) {
@@ -32,13 +32,11 @@ export class LibroModificacionComponent implements OnInit {
   }
 
   modificarLibro() {
-    if(this.librosService.actualizarLibro(this.libro.id, this.libro)){
-      alert(`libro actualizado`)
-    }else{
-      alert('Error, libro no encontrado')
-    }
+    this.librosService.actualizarLibro(this.id,this.libroEditar)
     this.router.navigate(['/libros']);
   }
+
+
   volver() {
     this.router.navigate(['/libros']);
   }

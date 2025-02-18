@@ -1,0 +1,10 @@
+<h2>Lista usuarios</h2>
+<!--id, name username-->
+<ul>
+  <li *ngFor="let usuario of userList$ | async">
+    <a [routerLink]="['/detalle-usuario', usuario.id]">
+        <!--importar commonmodule ngfor y routerLink-->
+      {{ usuario.id }} -- {{ usuario.name }} -- {{ usuario.username }}</a
+    >
+  </li>
+</ul>
