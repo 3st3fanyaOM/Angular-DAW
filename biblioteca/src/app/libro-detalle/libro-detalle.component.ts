@@ -11,7 +11,7 @@ import { LibrosService } from '../services/libros.service';
   styleUrl: './libro-detalle.component.css',
 })
 export class LibroDetalleComponent implements OnInit {
-  libro?: Libro = {
+  libro: Libro = {
     id: 0,
     titulo: '',
     autor: '',

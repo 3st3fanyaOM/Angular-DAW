@@ -12,8 +12,10 @@ import { Router, RouterLink } from '@angular/router';
   styleUrl: './libros.component.css',
 })
 export class LibrosComponent implements OnInit {
-  libros: Libro[] = []; //array vacio para metrer libros
-  constructor(private librosService: LibrosService, private router: Router) {}
+  libros: Libro[]; //array vacio para metrer libros
+  constructor(private librosService: LibrosService, private router: Router) {
+    this.libros=librosService.obtenerLibros();
+  }
 
   ngOnInit(): void {
     this.libros = this.librosService.obtenerLibros();

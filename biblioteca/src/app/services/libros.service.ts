@@ -34,17 +34,17 @@ export class LibrosService {
     return this.libros;
   }
 
-  obtenerLibroPorId(id: number): Libro | undefined {
-    return this.libros.find((libro) => libro.id == id);
+  obtenerLibroPorId(id: number): Libro {
+    return this.libros[id - 1];
   }
 
-  actualizarLibro(idLibro: number, libroEditado: Libro): Boolean {
-    const libro = this.libros.find((libro) => libro.id == idLibro);
-    if (libro) {
-      libro.titulo = libroEditado.titulo;
-      libro.autor = libroEditado.autor;
-      return true;
+  actualizarLibro(nuevoLibro: Libro) {
+    for (let i = 0; i < this.libros.length; i++) {
+      if (this.libros[i].id === nuevoLibro.id) {
+        this.libros[i].autor = nuevoLibro.autor;
+        this.libros[i].titulo = nuevoLibro.titulo;
+        break; // Se encontró el objeto, termina la búsqueda
+      }
     }
-    return false;
   }
 }
