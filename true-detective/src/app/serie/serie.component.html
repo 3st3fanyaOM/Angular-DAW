@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <td><img src="{{ (serie | async)?.image?.original }}"></td>
+    <td>
+      <h1>{{(serie | async)?.name}}</h1>
+      <p><strong>Idioma:</strong>{{(serie | async)?.languaje}}</p>
+      <p><strong>Géneros:</strong></p>
+      <ul>
+        <li *ngFor="let genre of (serie | async)?.genres">{{genre}}</li>
+      </ul>
+      <p [innerHTML]="(serie | async)?.summary"></p>
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,12 @@
+<h1>Formulario valoración</h1>
+<form>
+  <label for="serie">Serie</label>
+  <input type="text" name="serie" [(ngModel)]="serie" />
+  <label for="correo">Correo</label>
+  <input type="text" name="correo" [(ngModel)]="correo" />
+  <label for="nombre">Nombre</label>
+  <input type="text" name="nombre" [(ngModel)]="nombre" />
+  <button type="submit" (click)="cargarResumen()">Enviar</button>
+  <p *ngIf="mostrarMensaje" class="rojo">Por favor, introduce el correo</p>
+  <app-formulario *ngIf="mostrarResumen"></app-formulario>
+</form>
