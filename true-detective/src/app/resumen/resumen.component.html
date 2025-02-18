@@ -1,1 +1,10 @@
-<p>resumen works!</p>
+<h1>Resumen de la solicitud</h1>
+<p> Nombre {{nombre}}</p>
+<p> Correo {{correo}}</p>
+<p> Serie sugerida {{serie}}</p>
+<form>
+<label for="valoracion"></label>
+<input type="text" name="valoracion" [(ngModel)]="valoracion">
+<button type="button" (click)="enviarValoracion()">Enviar valoración</button>
+</form>
+

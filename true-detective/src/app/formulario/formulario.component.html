@@ -1,12 +1,23 @@
 <h1>Formulario valoración</h1>
 <form>
-  <label for="serie">Serie</label>
-  <input type="text" name="serie" [(ngModel)]="serie" />
-  <label for="correo">Correo</label>
-  <input type="text" name="correo" [(ngModel)]="correo" />
-  <label for="nombre">Nombre</label>
-  <input type="text" name="nombre" [(ngModel)]="nombre" />
-  <button type="submit" (click)="cargarResumen()">Enviar</button>
-  <p *ngIf="mostrarMensaje" class="rojo">Por favor, introduce el correo</p>
-  <app-formulario *ngIf="mostrarResumen"></app-formulario>
+  <label for="serie">Serie</label><br />
+  <input type="text" name="serie" [(ngModel)]="serie" /><br />
+  <label for="correo">Correo</label><br />
+  <input type="text" name="correo" [(ngModel)]="correo" /><br />
+  <label for="nombre">Nombre</label><br />
+  <input type="text" name="nombre" [(ngModel)]="nombre" /><br /><br />
+  <button type="button" (click)="cargarResumen()">Enviar</button>
+  <p *ngIf="error" class="rojo">Por favor, introduce el correo</p>
+  <app-resumen
+    *ngIf="mostrarResumen"
+    [serie]="serie"
+    [correo]="correo"
+    [nombre]="nombre"
+    (valor)="recibirValoracion($event)"
+  ></app-resumen>
+  <div *ngIf="valoracion">
+    <h2 class="verde">
+      Gracias {{ nombre }}, por tu valoración de {{ valoracion }}
+    </h2>
+  </div>
 </form>
