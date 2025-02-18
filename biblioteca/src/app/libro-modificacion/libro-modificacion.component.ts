@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './libro-modificacion.component.css',
 })
 export class LibroModificacionComponent implements OnInit {
-  libro?: Libro = { id: 0, titulo: '', autor: '' };
+  libro: Libro = { id: 0, titulo: '', autor: '' };
   autor: any;
   titulo: any;
 
@@ -24,15 +24,11 @@ export class LibroModificacionComponent implements OnInit {
 
   ngOnInit(): void {//rellenar los inputs con el libro recibido cx id
     const id = this.route.snapshot.params['id'];
-    const libroEditar = this.librosService.obtenerLibroPorId(id);
-    if (libroEditar) {
-      this.autor = libroEditar.autor;
-      this.titulo = libroEditar.titulo;
-    }
+    this.libro = this.librosService.obtenerLibroPorId(id);
   }
 
   modificarLibro() {
-    this.librosService.actualizarLibro(this.id,this.libroEditar)
+    this.librosService.actualizarLibro(this.libro);
     this.router.navigate(['/libros']);
   }
 
