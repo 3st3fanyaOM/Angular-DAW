@@ -1,1 +1,16 @@
-<p>post works!</p>
+<h1>POSTS</h1>
+<button (click)="mostrarPosts()">Mostrar posts</button>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="listaPosts | async as posts">
+    <tr *ngFor="let post of posts">
+      <td>{{ post.title }}</td>
+      <td>{{ post.body }}</td>
+    </tr>
+  </tbody>
+</table>

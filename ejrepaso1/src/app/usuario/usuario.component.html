@@ -1,6 +1,15 @@
 <h1>Buscar usuario</h1>
 <form>
-    <label for="numUsuario">Introduce número de usuario</label>
-    <input type="number" [(ngModel)]="numUsuario">
-    <button type="submit" (click)="buscarUsuario()">Buscar usuario</button>
+  <label for="numUsuario">Introduce número de usuario</label>
+  <input type="number" name="numUsuario" [(ngModel)]="numUsuario" />
+  <button type="submit" (click)="buscarUsuario(numUsuario)">
+    Buscar usuario
+  </button>
+  <div>
+    <h2>Usuario encontrado</h2>
+    <p>Nombre: {{ (usuario | async)?.name }}</p>
+    <p>Usuario: {{ (usuario | async)?.username }}</p>
+    <p>Email: {{ (usuario | async)?.email }}</p>
+    <p>Dirección: {{ (usuario | async)?.address }}</p>
+  </div>
 </form>
